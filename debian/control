@@ -1,0 +1,57 @@
+Source: libxml-sanitize
+Section: libs
+Priority: optional
+Maintainer: Mohamed Elmoncef HAMDI <mohamedelmoncef.hamdi@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               pkg-config,
+               libexpat1-dev,
+               libxml2-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/moncef007/xml-sanitize
+Vcs-Browser: https://github.com/moncef007/xml-sanitize
+Vcs-Git: https://github.com/moncef007/xml-sanitize.git
+Rules-Requires-Root: no
+
+Package: libxml-sanitize1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: XML sanitization library
+ A XML sanitization library supporting multiple backends with
+ comprehensive XML cleaning, entity escaping, tag filtering,
+ and security sanitization features.
+ .
+ Features include:
+  - Multiple backend support (custom, expat, libxml2, mxml, etc...)
+  - Tag/attribute whitelisting
+  - Entity escaping
+  - Control character removal
+  - UTF-8 validation
+  - Custom filter callbacks
+ .
+ This package contains the shared library.
+
+Package: libxml-sanitize-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libxml-sanitize1 (= ${binary:Version}), ${misc:Depends}
+Description: XML sanitization library - development files
+ A XML sanitization library supporting multiple backends with
+ comprehensive XML cleaning, entity escaping, tag filtering,
+ and security sanitization features.
+ .
+ This package contains the development headers and static library.
+
+Package: libxml-sanitize-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: XML sanitization library - documentation
+ A XML sanitization library supporting multiple backends with
+ comprehensive XML cleaning, entity escaping, tag filtering,
+ and security sanitization features.
+ .
+ This package contains the documentation and examples.

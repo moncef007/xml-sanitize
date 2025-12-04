@@ -1,0 +1,10 @@
+prefix=@PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: xml_sanitize
+Description: XML Sanitization Library
+Version: @VERSION@
+Libs: -L${libdir} -lxml_sanitize
+Cflags: -I${includedir}
